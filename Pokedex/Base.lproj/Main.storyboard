@@ -45,7 +45,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="SnI-ZW-hji" customClass="PokeCell" customModule="Pokedex" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="SnI-ZW-hji" customClass="PokeCell" customModule="Pokedex" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -62,15 +62,16 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="658" translatesAutoresizingMaskIntoConstraints="NO" id="NUb-vL-dnt">
+                                                <imageView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6" translatesAutoresizingMaskIntoConstraints="NO" id="NUb-vL-dnt">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="94"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.65148168103448278" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="NUb-vL-dnt" secondAttribute="bottom" constant="16" id="J0s-W2-6iQ"/>
                                             <constraint firstItem="vsu-Kc-mDC" firstAttribute="leading" secondItem="SnI-ZW-hji" secondAttribute="leading" id="PWx-in-PIv"/>
@@ -106,6 +107,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="40h-Re-XFy" secondAttribute="bottom" constant="20" id="zy3-Zk-Csl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="40h-Re-XFy" id="g7c-N6-Ogt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,7 +117,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="658" width="142" height="120"/>
+        <image name="6" width="137" height="120"/>
         <image name="bg" width="1920" height="1200"/>
     </resources>
 </document>
