@@ -4,6 +4,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Pokemon.ttf">
+            <string>PokemonSolidNormal</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -19,8 +24,39 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6h-2u-mtj">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C07-zq-Ffm">
+                                        <rect key="frame" x="222" y="0.0" width="156" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="156" id="Pl8-b7-kA2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="31"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkV-0A-NNA">
+                                        <rect key="frame" x="546" y="8" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="99N-h1-EMc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                        <state key="normal" title="Music">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="musicControl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y33-2U-x0m"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.42458799430661065" blue="0.31883618439940387" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="C07-zq-Ffm" firstAttribute="centerY" secondItem="B6h-2u-mtj" secondAttribute="centerY" id="2lp-5v-7rx"/>
+                                    <constraint firstAttribute="trailing" secondItem="dkV-0A-NNA" secondAttribute="trailing" constant="8" id="7kN-Ad-bwc"/>
+                                    <constraint firstItem="C07-zq-Ffm" firstAttribute="top" secondItem="B6h-2u-mtj" secondAttribute="top" id="D3H-by-ENI"/>
+                                    <constraint firstItem="C07-zq-Ffm" firstAttribute="centerX" secondItem="B6h-2u-mtj" secondAttribute="centerX" id="DPO-w6-Cyg"/>
+                                    <constraint firstAttribute="bottom" secondItem="dkV-0A-NNA" secondAttribute="bottom" constant="8" id="Y3h-c2-qBo"/>
+                                    <constraint firstAttribute="bottom" secondItem="C07-zq-Ffm" secondAttribute="bottom" id="Z61-Oq-Nn7"/>
+                                    <constraint firstItem="dkV-0A-NNA" firstAttribute="top" secondItem="B6h-2u-mtj" secondAttribute="top" constant="8" id="iru-7X-UBV"/>
                                     <constraint firstAttribute="height" constant="46" id="wEh-qo-gIx"/>
                                 </constraints>
                             </view>
@@ -109,6 +145,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="40h-Re-XFy" id="g7c-N6-Ogt"/>
+                        <outlet property="musicBtn" destination="dkV-0A-NNA" id="klJ-fe-mbl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
