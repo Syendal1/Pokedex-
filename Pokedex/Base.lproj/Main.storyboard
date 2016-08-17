@@ -146,6 +146,7 @@
                     <connections>
                         <outlet property="collectionView" destination="40h-Re-XFy" id="g7c-N6-Ogt"/>
                         <outlet property="musicBtn" destination="dkV-0A-NNA" id="klJ-fe-mbl"/>
+                        <outlet property="searchBar" destination="KR7-Wa-Pjz" id="wi5-oo-mJR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
