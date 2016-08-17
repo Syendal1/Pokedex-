@@ -24,6 +24,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         collectionView.delegate=self
         collectionView.dataSource=self
         searchBar.delegate=self
+        searchBar.returnKeyType=UIReturnKeyType.Done
         
         parsePokemonCSV()
         playMusic()
@@ -107,10 +108,14 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(105, 105)
     }
-    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text==nil||searchBar==""{
+        if searchBar.text==nil||searchBar.text==""{
             inSearchMode=false
+            view.endEditing(true)
+            collectionView.reloadData()
         }else{
             inSearchMode=true
             let searchItem=searchBar.text!.lowercaseString
