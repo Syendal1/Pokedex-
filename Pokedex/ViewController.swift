@@ -102,7 +102,14 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        /////
+        let poke:Pokemon!
+        if inSearchMode{
+            poke=filteredPokemon[indexPath.row]
+        }else{
+            poke=pokemon[indexPath.row]
+        }
+        
+        performSegueWithIdentifier("PokemonDetailVC", sender: poke)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -123,8 +130,14 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             collectionView.reloadData()
         }
     }
-
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier=="PokemonDetailVC"{
+            if let detailVC=segue.destinationViewController as? PokemonDetailVC{
+                if let poke=sender as? Pokemon{
+                    detailVC.pokemon=poke
+                }
+            }
+        }
+    }
 
 }
-
