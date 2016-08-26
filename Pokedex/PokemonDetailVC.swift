@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PokemonDetailVC: UIViewController {
 
@@ -26,7 +27,14 @@ class PokemonDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        pokemonName.text=pokemon.name
+        self.view.backgroundColor=UIColor .whiteColor()
+        pokemonName.text=pokemon.name.capitalizedString
+        mainImg.image=UIImage(named: "\(pokemon.pokedexId)")
+        
+
+        pokemon.downloadPokemonDetails { 
+            
+        }
 
         // Do any additional setup after loading the view.
     }
